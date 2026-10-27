@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <meta name="description" content="Pon a prueba tu memoria y adivina los 151 Pokémon de Kanto." />
+    <title>Desafío Kanto — Adivina los 151</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/game.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Desafío Kanto, inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="20" fill="#fff" stroke="#18202b" stroke-width="3" />
+              <path d="M5 22.5h38A19 19 0 0 1 24 43 19 19 0 0 1 5 22.5Z" fill="#ef514c" />
+              <path d="M5 22.5h38" stroke="#18202b" stroke-width="4" />
+              <circle cx="24" cy="23" r="6.5" fill="#fff" stroke="#18202b" stroke-width="3" />
+              <circle cx="24" cy="23" r="2.4" fill="#fff" stroke="#18202b" stroke-width="2" />
+            </svg>
+          </span>
+          <span class="brand-name">KANTO<span>151</span></span>
+        </a>
+        <div class="topbar-note"><span class="live-dot"></span> Un reto para entrenadores</div>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> EL DESAFÍO ORIGINAL</p>
+          <h1 id="page-title">¿Cuántos<br />puedes <em>recordar?</em></h1>
+          <p class="hero-description">Escribe los nombres de los Pokémon de Kanto y completa la Pokédex. Cada acierto revela una nueva entrada.</p>
+          <div class="generation-label"><span class="generation-dot"></span> GENERACIÓN I <span class="label-divider">/</span> N.º 001 — 151</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="hero-ball">
+            <div class="ball-shine"></div>
+            <div class="ball-band"></div>
+            <div class="ball-button"><span></span></div>
+          </div>
+          <span class="spark spark-one">✳</span>
+          <span class="spark spark-two">✦</span>
+          <span class="spark spark-three">✧</span>
+          <div class="hero-caption"><span>151</span> especies por descubrir</div>
+        </div>
+      </section>
+
+      <section class="game-panel" aria-label="Juego de adivinar Pokémon">
+        <div class="stats-row">
+          <div class="stat-block">
+            <span class="stat-label">DESCUBIERTOS</span>
+            <span class="stat-number"><span id="found-count">0</span><small> / 151</small></span>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-meta"><span>Progreso de la Pokédex</span><span id="progress-percent">0%</span></div>
+            <div class="progress-track" role="progressbar" aria-label="Progreso de la Pokédex" aria-valuemin="0" aria-valuemax="151" aria-valuenow="0" id="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button class="reset-button" id="reset-button" type="button" title="Empezar de nuevo">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16.7 8A7 7 0 0 0 4.4 5.1L2.8 6.8M3 3v4h4M3.3 12a7 7 0 0 0 12.3 2.9l1.6-1.7M17 17v-4h-4" /></svg>
+            <span>Reiniciar</span>
+          </button>
+        </div>
+
+        <form class="guess-form" id="guess-form" autocomplete="off">
+          <label class="sr-only" for="guess-input">Nombre de un Pokémon</label>
+          <span class="input-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.5 4.5" /></svg>
+          </span>
+          <input id="guess-input" name="guess" type="text" placeholder="Escribe un nombre..." autocapitalize="words" spellcheck="false" aria-describedby="guess-feedback" />
+          <button class="submit-button" type="submit">Adivinar <span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="feedback-row">
+          <p class="feedback" id="guess-feedback" aria-live="polite">Pulsa Enter o haz clic en Adivinar.</p>
+          <span class="keyboard-hint"><kbd>ENTER</kbd> para probar</span>
+        </div>
+
+        <div class="dex-heading">
+          <div>
+            <p class="eyebrow">TU COLECCIÓN</p>
+            <h2>Pokédex de Kanto</h2>
+          </div>
+          <span class="dex-count" id="remaining-count">151 restantes</span>
+        </div>
+        <div class="pokemon-grid" id="pokemon-grid" aria-label="Pokédex: 151 espacios"></div>
+
+        <footer class="game-footer">
+          <span><span class="footer-dot"></span> Tu progreso se guarda en este dispositivo</span>
+          <span>Hecho para fans de Kanto <span class="heart">♥</span></span>
+        </footer>
+      </section>
+      <p class="page-footnote">Nombres en inglés, como aparecen en la Pokédex original.</p>
+    </main>
+  </body>
+</html>
